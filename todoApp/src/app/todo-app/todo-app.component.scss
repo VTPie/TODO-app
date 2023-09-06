@@ -1,0 +1,37 @@
+h1{
+    text-align: center;
+}
+.item-todo{
+    position: relative;
+    background-color: #eeeeee;
+    border-radius: 5px;
+    height: 30px;
+    margin: 0 0 20px 0;
+    font-size: 18px;
+    width: 100%;
+    padding-top: 2px;
+    .item-index{
+        background-color: #405061;
+        margin-right: 10px;
+        border-radius: 5px 0 0 5px;
+        padding: 2px 10px 6px 10px;
+        color: white;
+    }
+    .item-delete{
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        background-color: white;
+        border: none;
+        padding: 2px 7px;
+        border-radius: 2px;
+    }
+    .item-delete:hover{
+        background-color: #525252;
+        color: white;
+    }
+}
+.item-todo:hover{
+    left: 10px;
+    background-color: #bdbdbd;
+}

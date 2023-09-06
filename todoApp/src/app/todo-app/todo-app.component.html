@@ -1,0 +1,8 @@
+<h1>Simple TODO app</h1>
+<p *ngFor="let todo of sampleTD; let i = index" class="item-todo">
+    <span class="item-index">{{i+1}}</span>
+    {{todo.title}}
+    <button type="button" (click)="deleteTD(i)" class="item-delete">x</button>
+</p>
+
+<app-add-todo (newTDEvent)="addTD($event)"></app-add-todo>

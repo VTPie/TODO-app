@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-todo-app',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./todo-app.component.scss']
 })
 export class TodoAppComponent {
+  constructor(private toastr: ToastrService) { }
+
   sampleTD = [
     { id: 1, title: 'Sleep' },
     { id: 2, title: 'Eat' },
@@ -17,8 +20,10 @@ export class TodoAppComponent {
       title: newTitle
     }
     this.sampleTD.push(newTD)
+    this.toastr.success('Added new TODO successfully.', 'Success');
   }
   deleteTD(index: number) {
     this.sampleTD.splice(index, 1)
+    this.toastr.success('Deleted TODO successfully.', 'Success');
   }
 }

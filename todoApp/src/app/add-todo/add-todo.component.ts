@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-add-todo',
@@ -7,15 +8,15 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class AddTodoComponent {
   @Output() newTDEvent = new EventEmitter<string>();
+  constructor(private toastr: ToastrService) { }
 
 
   addNewTD(value: string) {
     if (!value) {
-      alert("TODO is empty!")
+      this.toastr.error('Input cannot be empty.', 'Error');
     }
     else {
       this.newTDEvent.emit(value);
-
     }
   }
 }

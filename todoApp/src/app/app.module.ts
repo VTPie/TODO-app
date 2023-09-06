@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { TodoAppComponent } from './todo-app/todo-app.component';
 import { AddTodoComponent } from './add-todo/add-todo.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -12,7 +14,9 @@ import { AddTodoComponent } from './add-todo/add-todo.component';
     AddTodoComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
